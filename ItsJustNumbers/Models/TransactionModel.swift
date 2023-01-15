@@ -11,8 +11,12 @@ import SwiftUI
 struct TransactionModel {
     
     var id: UUID
-    var title: String
-    var description: String
+    var title: String {
+        type.placeholder_Title
+    }
+    var description: String {
+        type.placeholder_Description
+    }
     var value: Double
     var type: TransactionType
     
@@ -35,15 +39,6 @@ struct TransactionModel {
                     return "Hai ricevuto del denaro"
                 case .outcoming:
                     return "Hai effettuato un pagato"
-            }
-        }
-        
-        var color: Color {
-            switch self {
-                case .incoming:
-                    return Color.green
-                case .outcoming:
-                    return Color.red
             }
         }
     }

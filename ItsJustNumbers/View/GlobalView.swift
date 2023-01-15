@@ -14,8 +14,9 @@ struct GlobalView: View {
     var body: some View {
         VStack() {
             MainAccountInfoUIComponent(account: .constant(account))
-            DebugTools(account: .constant(account))
             TransactionListUIComponent(account: .constant(account))
+                .padding(.vertical)
+            DebugTools(account: .constant(account))
         }
     }
 }
@@ -25,13 +26,34 @@ struct DebugTools: View {
     @Binding var account: AccountViewnModel
     
     var body: some View {
-        Button("Aumenta Currency") {
-            account.addCurrency()
-        }
-        Button("Aumenta Experience") {
-            account.addExperience()
+        HStack(alignment: .center, spacing: 10) {
+            HStack() {
+                DebugButton(
+                    text: .constant("Add Transaction"),
+                    action: .constant(account.addRandomTransaction)
+                )
+                Spacer()
+                DebugButton(
+                    text: .constant("Add Experience"),
+                    action: .constant(account.addExperience)
+                )
+            }
+            .padding(.horizontal)
         }
     }
+    
+    struct DebugButton: View {
+        
+        @Binding var text: String
+        @Binding var action: () -> Void
+        
+        var body: some View {
+            Button(action: action) {
+                Text(text)
+            }
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

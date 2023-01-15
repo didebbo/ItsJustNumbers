@@ -17,26 +17,7 @@ class AccountViewnModel: ObservableObject {
         currency: 0,
         level: 0,
         experience: 0,
-        transactions: {
-            var transactions: [TransactionModel] = []
-            for _ in 1...2 {
-                transactions.append(
-                    TransactionModel(
-                        id: UUID(),
-                        title: "",
-                        description: "",
-                        value: Double.random(in: 0.1...5),
-                        type: Bool.random() ? TransactionModel.TransactionType.incoming : TransactionModel.TransactionType.outcoming
-                    )
-                )
-            }
-            return transactions.map { transaction in
-                var newTransaction = transaction
-                newTransaction.title = transaction.type.placeholder_Title
-                newTransaction.description = transaction.type.placeholder_Description
-                return newTransaction
-            }
-        }()
+        transactions: []
     )
     
     func getCurrency() -> String {
@@ -55,7 +36,35 @@ class AccountViewnModel: ObservableObject {
     }
     
     func addCurrency() {
-        model.currency += 1 / Double.random(in: 0...100)
+        let addValue = 1 / Double.random(in: 0...100)
+        model.transactions.append(
+            TransactionModel(
+                id: UUID(),
+                value: addValue,
+                type: .incoming
+            )
+        )
+        model.currency += addValue
+    }
+    
+    func removeCurrency() {
+        let removeValue = 1 / Double.random(in: 0...100)
+        model.transactions.append(
+            TransactionModel(
+                id: UUID(),
+                value: removeValue,
+                type: .outcoming
+            )
+        )
+        model.currency -= removeValue
+    }
+    
+    func addRandomTransaction() {
+        if(Bool.random()) {
+            addCurrency()
+        } else {
+            removeCurrency()
+        }
     }
     
     func addExperience() {
