@@ -9,13 +9,21 @@ import Foundation
 
 struct AccountModel {
     
+    // MARK: ACCOUNT INFO
+    
     var id: UUID
     var name: String
     var surname: String
     var username: String
+    
+    // MARK: PARAMETRICS INFO
+    
     var currency: Double
     var level: Int
     var experience: Double
+    
+    // MARK: TRANSACTIONS INFO
+    var transactions: [TransactionModel]
 }
 
 

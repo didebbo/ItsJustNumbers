@@ -14,13 +14,22 @@ struct GlobalView: View {
     var body: some View {
         VStack() {
             MainAccountInfoUIComponent(account: .constant(account))
-            Button("Aumenta Currency") {
-                account.addCurrency()
-            }
-            Button("Aumenta Experience") {
-                account.addExperience()
-            }
-            Spacer()
+            DebugTools(account: .constant(account))
+            TransactionListUIComponent(account: .constant(account))
+        }
+    }
+}
+
+struct DebugTools: View {
+    
+    @Binding var account: AccountViewnModel
+    
+    var body: some View {
+        Button("Aumenta Currency") {
+            account.addCurrency()
+        }
+        Button("Aumenta Experience") {
+            account.addExperience()
         }
     }
 }

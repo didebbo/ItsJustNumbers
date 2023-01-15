@@ -16,7 +16,27 @@ class AccountViewnModel: ObservableObject {
         username: "Mario Rossi",
         currency: 0,
         level: 0,
-        experience: 0
+        experience: 0,
+        transactions: {
+            var transactions: [TransactionModel] = []
+            for _ in 1...2 {
+                transactions.append(
+                    TransactionModel(
+                        id: UUID(),
+                        title: "",
+                        description: "",
+                        value: Double.random(in: 0.1...5),
+                        type: Bool.random() ? TransactionModel.TransactionType.incoming : TransactionModel.TransactionType.outcoming
+                    )
+                )
+            }
+            return transactions.map { transaction in
+                var newTransaction = transaction
+                newTransaction.title = transaction.type.placeholder_Title
+                newTransaction.description = transaction.type.placeholder_Description
+                return newTransaction
+            }
+        }()
     )
     
     func getCurrency() -> String {
@@ -25,6 +45,13 @@ class AccountViewnModel: ObservableObject {
     
     func getExperience() -> String {
         String(String(format: "%.6f", model.experience).dropFirst(2))
+    }
+    
+    func getTransactionValue(id: UUID, withUniform: Bool ) -> String {
+        guard let value = model.transactions.first(where: {$0.id == id})?.value else { return "NA" }
+        var str = String(format: "%.2f", (value))
+        if withUniform { str += "€" }
+        return  str
     }
     
     func addCurrency() {
