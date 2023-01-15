@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GlobalView: View {
     
     @StateObject var account = AccountViewnModel()
     
     var body: some View {
         VStack() {
-            MainAccountInfo(account: .constant(account))
+            MainAccountInfoUIComponent(account: .constant(account))
             Button("Aumenta Currency") {
                 account.addCurrency()
             }
@@ -27,6 +27,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GlobalView()
     }
 }

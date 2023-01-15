@@ -1,5 +1,5 @@
 //
-//  Account.swift
+//  AccountViewModel.swift
 //  ItsJustNumbers
 //
 //  Created by MC Engineering on 15/01/23.
@@ -7,24 +7,13 @@
 
 import Foundation
 
-struct Account {
-    
-    var id: UUID
-    var name: String
-    var surname: String
-    var username: String
-    var currency: Double
-    var level: Int
-    var experience: Double
-}
-
 class AccountViewnModel: ObservableObject {
     
-    @Published private(set) var model: Account = Account(
+    @Published private(set) var model: AccountModel = AccountModel(
         id: UUID(),
         name: "Mario",
-        surname: "Rossini",
-        username: "MarioRossini",
+        surname: "Rossi",
+        username: "Mario Rossi",
         currency: 0,
         level: 0,
         experience: 0
@@ -47,5 +36,3 @@ class AccountViewnModel: ObservableObject {
         model.level = Int(model.experience)
     }
 }
-
-

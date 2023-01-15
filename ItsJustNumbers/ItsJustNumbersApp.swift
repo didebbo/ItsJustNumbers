@@ -12,7 +12,7 @@ struct ItsJustNumbersApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GlobalView()
         }
     }
 }

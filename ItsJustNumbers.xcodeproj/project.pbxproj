@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		CE4E2564297422ED007D5294 /* ItsJustNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2563297422ED007D5294 /* ItsJustNumbersApp.swift */; };
-		CE4E2566297422ED007D5294 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2565297422ED007D5294 /* ContentView.swift */; };
+		CE4E2566297422ED007D5294 /* GlobalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E2565297422ED007D5294 /* GlobalView.swift */; };
 		CE4E2568297422EE007D5294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4E2567297422EE007D5294 /* Assets.xcassets */; };
 		CE4E256B297422EE007D5294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4E256A297422EE007D5294 /* Preview Assets.xcassets */; };
-		CEBDD57C2974249500319722 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD57B2974249500319722 /* Account.swift */; };
-		CEBDD5802974288100319722 /* MainAccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD57F2974288100319722 /* MainAccountInfo.swift */; };
+		CEBDD57C2974249500319722 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD57B2974249500319722 /* AccountModel.swift */; };
+		CEBDD5802974288100319722 /* MainAccountInfoUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD57F2974288100319722 /* MainAccountInfoUIComponent.swift */; };
+		CEBDD58329747A6000319722 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD58229747A5F00319722 /* AccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE4E2560297422ED007D5294 /* ItsJustNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItsJustNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4E2563297422ED007D5294 /* ItsJustNumbersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItsJustNumbersApp.swift; sourceTree = "<group>"; };
-		CE4E2565297422ED007D5294 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE4E2565297422ED007D5294 /* GlobalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalView.swift; sourceTree = "<group>"; };
 		CE4E2567297422EE007D5294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4E256A297422EE007D5294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CEBDD57B2974249500319722 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		CEBDD57F2974288100319722 /* MainAccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAccountInfo.swift; sourceTree = "<group>"; };
+		CEBDD57B2974249500319722 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		CEBDD57F2974288100319722 /* MainAccountInfoUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAccountInfoUIComponent.swift; sourceTree = "<group>"; };
+		CEBDD58229747A5F00319722 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				CE4E2563297422ED007D5294 /* ItsJustNumbersApp.swift */,
 				CEBDD57A2974247E00319722 /* Models */,
+				CEBDD58129747A1700319722 /* ViewModel */,
 				CEBDD57D2974279F00319722 /* View */,
 				CEBDD57E2974283C00319722 /* UIComponents */,
 				CE4E2567297422EE007D5294 /* Assets.xcassets */,
@@ -76,7 +79,7 @@
 		CEBDD57A2974247E00319722 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CEBDD57B2974249500319722 /* Account.swift */,
+				CEBDD57B2974249500319722 /* AccountModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,7 +87,7 @@
 		CEBDD57D2974279F00319722 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE4E2565297422ED007D5294 /* ContentView.swift */,
+				CE4E2565297422ED007D5294 /* GlobalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,9 +95,17 @@
 		CEBDD57E2974283C00319722 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				CEBDD57F2974288100319722 /* MainAccountInfo.swift */,
+				CEBDD57F2974288100319722 /* MainAccountInfoUIComponent.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		CEBDD58129747A1700319722 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEBDD58229747A5F00319722 /* AccountViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,10 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4E2566297422ED007D5294 /* ContentView.swift in Sources */,
+				CE4E2566297422ED007D5294 /* GlobalView.swift in Sources */,
+				CEBDD58329747A6000319722 /* AccountViewModel.swift in Sources */,
 				CE4E2564297422ED007D5294 /* ItsJustNumbersApp.swift in Sources */,
-				CEBDD5802974288100319722 /* MainAccountInfo.swift in Sources */,
-				CEBDD57C2974249500319722 /* Account.swift in Sources */,
+				CEBDD5802974288100319722 /* MainAccountInfoUIComponent.swift in Sources */,
+				CEBDD57C2974249500319722 /* AccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

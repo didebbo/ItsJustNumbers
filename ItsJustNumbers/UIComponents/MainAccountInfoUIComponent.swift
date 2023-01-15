@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainAccountInfo: View {
+struct MainAccountInfoUIComponent: View {
     
     @Binding var account: AccountViewnModel
     
@@ -50,7 +50,7 @@ struct MainAccountInfo: View {
 struct MainAccountInfo_Previews: PreviewProvider {
     static var previews: some View {
         VStack() {
-            MainAccountInfo(
+            MainAccountInfoUIComponent(
                 account: .constant(AccountViewnModel())
             )
             Spacer()
