@@ -47,7 +47,7 @@ class AccountViewnModel: ObservableObject {
         String(String(format: "%.6f", model.experience).dropFirst(2))
     }
     
-    func getTransactionValue(id: UUID, withUniform: Bool ) -> String {
+    func getTransactionValue(id: UUID, withUniform: Bool = true ) -> String {
         guard let value = model.transactions.first(where: {$0.id == id})?.value else { return "NA" }
         var str = String(format: "%.2f", (value))
         if withUniform { str += "€" }

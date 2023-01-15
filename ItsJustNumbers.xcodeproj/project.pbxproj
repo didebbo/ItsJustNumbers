@@ -62,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4E2563297422ED007D5294 /* ItsJustNumbersApp.swift */,
+				CEBDD5882974A2A100319722 /* Extensions */,
 				CEBDD57A2974247E00319722 /* Models */,
 				CEBDD58129747A1700319722 /* ViewModel */,
 				CEBDD57D2974279F00319722 /* View */,
@@ -112,6 +113,13 @@
 				CEBDD58229747A5F00319722 /* AccountViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CEBDD5882974A2A100319722 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

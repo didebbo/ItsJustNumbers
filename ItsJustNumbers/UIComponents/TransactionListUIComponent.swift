@@ -12,16 +12,46 @@ struct TransactionListUIComponent: View {
     @Binding var account: AccountViewnModel
     
     var body: some View {
+        
         List(account.model.transactions, id: \.id) { transaction in
-            HStack() {
-                VStack() {
-                    Text(transaction.title)
-                    Text(transaction.description)
-                }
-                HStack() {
-                    Text(account.getTransactionValue(id: transaction.id, withUniform: true))
-                }
+            HStack(alignment: .center) {
+                TransactionDescriptionUIComponent(transaction: .constant(transaction))
+                Spacer()
+                TransactionValueUIComponent(account: .constant(account), transaction: .constant(transaction))
             }
+            .frame(maxWidth: .infinity)
+            .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+        }
+        .listStyle(.plain)
+    }
+}
+
+struct TransactionDescriptionUIComponent: View {
+    
+    @Binding var transaction: TransactionModel
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(transaction.title)
+                .foregroundColor(transaction.type == .incoming ? .green : .red )
+                .fontWeight(transaction.type == .incoming ? .bold : .regular)
+            Text(transaction.description)
+        }
+    }
+}
+
+struct TransactionValueUIComponent: View {
+    
+    @Binding var account: AccountViewnModel
+    @Binding var transaction: TransactionModel
+    
+    var body: some View {
+        HStack(spacing: .zero) {
+            if(transaction.type == .outcoming) {
+                Text("-")
+            }
+            Text(account.getTransactionValue(id: transaction.id))
+                .fontWeight(transaction.type == .incoming ? .bold : .regular)
         }
     }
 }

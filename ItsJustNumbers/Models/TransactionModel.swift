@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct TransactionModel {
     
@@ -34,6 +35,15 @@ struct TransactionModel {
                     return "Hai ricevuto del denaro"
                 case .outcoming:
                     return "Hai effettuato un pagato"
+            }
+        }
+        
+        var color: Color {
+            switch self {
+                case .incoming:
+                    return Color.green
+                case .outcoming:
+                    return Color.red
             }
         }
     }

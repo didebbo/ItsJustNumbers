@@ -11,7 +11,6 @@ struct MainAccountInfoUIComponent: View {
     
     @Binding var account: AccountViewnModel
     
-    
     var body: some View {
         ZStack(){
             VStack() {
@@ -39,7 +38,7 @@ struct MainAccountInfoUIComponent: View {
                     }
                 }
                 .padding()
-                .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .foregroundColor(.white)
