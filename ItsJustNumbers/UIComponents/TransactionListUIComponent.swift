@@ -12,7 +12,7 @@ struct TransactionListUIComponent: View {
     @Binding var account: AccountViewnModel
     
     var body: some View {
-        List(account.model.transactions, id: \.id) { transaction in
+        List(account.model.transactions.reversed(), id: \.id) { transaction in
             HStack(alignment: .center) {
                 TransactionDescriptionUIComponent(transaction: .constant(transaction))
                 Spacer()
