@@ -20,6 +20,10 @@ class AccountModelObservableObject: ObservableObject {
         transactions: []
     )
     
+    func getCurrency() -> String {
+        String(format: "%.2f", model.currency)
+    }
+    
     func addCurrency() {
         let addValue = 1 / Double.random(in: 0...100)
         model.transactions.append(
