@@ -46,9 +46,6 @@ struct TransactionValueUIComponent: View {
     
     var body: some View {
         HStack(spacing: .zero) {
-            if(transaction.type == .outcoming) {
-                Text("-")
-            }
             Text(account.getTransactionValue(id: transaction.id))
                 .fontWeight(transaction.type == .incoming ? .bold : .regular)
         }

@@ -29,7 +29,7 @@ class AccountViewnModel: ObservableObject {
     }
     
     func getTransactionValue(id: UUID, withUniform: Bool = true ) -> String {
-        guard let value = model.transactions.first(where: {$0.id == id})?.value else { return "NA" }
+        guard let value = model.transactions.first(where: {$0.id == id})?.value else { return "N/A" }
         var str = String(format: "%.2f", (value))
         if withUniform { str += "€" }
         return  str
@@ -52,7 +52,7 @@ class AccountViewnModel: ObservableObject {
         model.transactions.append(
             TransactionModel(
                 id: UUID(),
-                value: removeValue,
+                value: -removeValue,
                 type: .outcoming
             )
         )
