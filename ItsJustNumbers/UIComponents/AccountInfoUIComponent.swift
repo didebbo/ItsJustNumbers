@@ -9,32 +9,32 @@ import SwiftUI
 
 struct MainAccountInfoUIComponent: View {
     
-    @Binding var account: AccountViewModel
+    @Binding var viewModel: AccountViewModel
     
     var body: some View {
         ZStack(){
             VStack() {
                 VStack() {
-                    Text("\(account.model.name) \(account.model.surname)")
+                    Text("\(viewModel.dataModel.name) \(viewModel.dataModel.surname)")
                         .font(.system(size: 24, weight: .bold, design: .default))
-                    Text("\(account.model.id)")
+                    Text("\(viewModel.dataModel.id)")
                         .font(.system(size: 12, weight: .bold))
                 }
                 VStack(alignment: .leading) {
                     HStack(){
                         Text("Currency:")
                             .font(.system(size: 18, weight: .bold))
-                        Text(account.getCurrency())
+                        Text(viewModel.getCurrency())
                     }
                     HStack(){
                         Text("Level:")
                             .font(.system(size: 18, weight: .bold))
-                        Text("\(account.model.level)")
+                        Text("\(viewModel.dataModel.level)")
                     }
                     HStack(){
                         Text("Experience:")
                             .font(.system(size: 18, weight: .bold))
-                        Text(account.getExperience())
+                        Text(viewModel.getExperience())
                     }
                 }
                 .padding()
@@ -49,9 +49,7 @@ struct MainAccountInfoUIComponent: View {
 struct MainAccountInfo_Previews: PreviewProvider {
     static var previews: some View {
         VStack() {
-            MainAccountInfoUIComponent(
-                account: .constant(AccountViewModel())
-            )
+            MainAccountInfoUIComponent(viewModel: .constant(AccountViewModel()))
             Spacer()
         }
     }

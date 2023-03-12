@@ -20,7 +20,8 @@ struct TransactionModel {
     var value: Double
     var type: TransactionType
     
-    enum TransactionType: CaseIterable {
+    enum TransactionType {
+        case na
         case incoming
         case outcoming
         
@@ -30,6 +31,8 @@ struct TransactionModel {
                     return "In Entrata"
                 case .outcoming:
                     return "In Uscita"
+                default:
+                    return "--"
             }
         }
         
@@ -39,6 +42,8 @@ struct TransactionModel {
                     return "Hai ricevuto del denaro"
                 case .outcoming:
                     return "Hai effettuato un pagato"
+                default:
+                    return "--"
             }
         }
     }

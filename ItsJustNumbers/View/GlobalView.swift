@@ -9,14 +9,14 @@ import SwiftUI
 
 struct GlobalView: View {
     
-    @StateObject var account = AccountViewModel()
+    @StateObject var viewModel = AccountViewModel()
     
     var body: some View {
         VStack() {
-            MainAccountInfoUIComponent(account: .constant(account))
-            TransactionListUIComponent(account: .constant(account))
+            MainAccountInfoUIComponent(viewModel: .constant(viewModel))
+            TransactionListUIComponent(viewModel: .constant(viewModel))
                 .padding(.vertical)
-            DebugTools(account: .constant(account))
+            DebugTools(account: .constant(viewModel))
         }
     }
 }

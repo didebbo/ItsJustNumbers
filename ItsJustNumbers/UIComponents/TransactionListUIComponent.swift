@@ -9,14 +9,15 @@ import SwiftUI
 
 struct TransactionListUIComponent: View {
     
-    @Binding var account: AccountViewModel
+    @Binding var viewModel: AccountViewModel
     
     var body: some View {
-        List(account.model.transactions.reversed(), id: \.id) { transaction in
+        List(viewModel.dataModel.transactions.reversed(), id: \.id) { transaction in
+            let transictionId = Bool.random() ? transaction.id : UUID() // MARK: Simulate invalid value
             HStack(alignment: .center) {
-                TransactionDescriptionUIComponent(transaction: .constant(transaction))
+                TransactionDescriptionUIComponent(viewModel: .constant(viewModel), transactionId: .constant(transictionId))
                 Spacer()
-                TransactionValueUIComponent(account: .constant(account), transaction: .constant(transaction))
+                TransactionValueUIComponent(viewModel: .constant(viewModel), transactionId: .constant(transictionId))
             }
             .frame(maxWidth: .infinity)
             .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
@@ -27,33 +28,34 @@ struct TransactionListUIComponent: View {
 
 struct TransactionDescriptionUIComponent: View {
     
-    @Binding var transaction: TransactionModel
+    @Binding var viewModel: AccountViewModel
+    @Binding var transactionId: UUID
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(transaction.title)
-                .foregroundColor(transaction.type == .incoming ? .green : .red )
-                .fontWeight(transaction.type == .incoming ? .bold : .regular)
-            Text(transaction.description)
+            Text(viewModel.getTransactionTitle(withId: transactionId))
+                .foregroundColor(viewModel.getTransactionTitleColor(withId: transactionId))
+                .fontWeight(viewModel.getTransactionTitleFontWeight(withId: transactionId))
+            Text(viewModel.getTransactionDescription(withId: transactionId))
         }
     }
 }
 
 struct TransactionValueUIComponent: View {
     
-    @Binding var account: AccountViewModel
-    @Binding var transaction: TransactionModel
+    @Binding var viewModel: AccountViewModel
+    @Binding var transactionId: UUID
     
     var body: some View {
         HStack(spacing: .zero) {
-            Text(account.getTransactionValue(transaction: transaction))
-                .fontWeight(transaction.type == .incoming ? .bold : .regular)
+            Text(viewModel.getTransactionValue(withId: transactionId))
+                .fontWeight(viewModel.getTransactionValueFontWeight(withId: transactionId))
         }
     }
 }
 
 struct TransactionList_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionListUIComponent(account: .constant(AccountViewModel()))
+        TransactionListUIComponent(viewModel: .constant(AccountViewModel()))
     }
 }
