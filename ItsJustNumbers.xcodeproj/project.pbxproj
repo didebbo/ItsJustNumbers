@@ -13,7 +13,7 @@
 		CE4E256B297422EE007D5294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4E256A297422EE007D5294 /* Preview Assets.xcassets */; };
 		CEBDD57C2974249500319722 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD57B2974249500319722 /* AccountModel.swift */; };
 		CEBDD5802974288100319722 /* AccountInfoUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD57F2974288100319722 /* AccountInfoUIComponent.swift */; };
-		CEBDD58329747A6000319722 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD58229747A5F00319722 /* AccountViewModel.swift */; };
+		CEBDD58329747A6000319722 /* AccountModelObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD58229747A5F00319722 /* AccountModelObservableObject.swift */; };
 		CEBDD58529747BF700319722 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD58429747BF700319722 /* TransactionModel.swift */; };
 		CEBDD5872974945B00319722 /* TransactionListUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDD5862974945B00319722 /* TransactionListUIComponent.swift */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 		CE4E256A297422EE007D5294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEBDD57B2974249500319722 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		CEBDD57F2974288100319722 /* AccountInfoUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoUIComponent.swift; sourceTree = "<group>"; };
-		CEBDD58229747A5F00319722 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		CEBDD58229747A5F00319722 /* AccountModelObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelObservableObject.swift; sourceTree = "<group>"; };
 		CEBDD58429747BF700319722 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		CEBDD5862974945B00319722 /* TransactionListUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListUIComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +64,7 @@
 				CE4E2563297422ED007D5294 /* ItsJustNumbersApp.swift */,
 				CEBDD5882974A2A100319722 /* Extensions */,
 				CEBDD57A2974247E00319722 /* Models */,
-				CEBDD58129747A1700319722 /* ViewModel */,
+				CEBDD58129747A1700319722 /* ObservableObjects */,
 				CEBDD57D2974279F00319722 /* View */,
 				CEBDD57E2974283C00319722 /* UIComponents */,
 				CE4E2567297422EE007D5294 /* Assets.xcassets */,
@@ -107,12 +107,12 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
-		CEBDD58129747A1700319722 /* ViewModel */ = {
+		CEBDD58129747A1700319722 /* ObservableObjects */ = {
 			isa = PBXGroup;
 			children = (
-				CEBDD58229747A5F00319722 /* AccountViewModel.swift */,
+				CEBDD58229747A5F00319722 /* AccountModelObservableObject.swift */,
 			);
-			path = ViewModel;
+			path = ObservableObjects;
 			sourceTree = "<group>";
 		};
 		CEBDD5882974A2A100319722 /* Extensions */ = {
@@ -195,7 +195,7 @@
 				CEBDD5872974945B00319722 /* TransactionListUIComponent.swift in Sources */,
 				CEBDD58529747BF700319722 /* TransactionModel.swift in Sources */,
 				CE4E2566297422ED007D5294 /* GlobalView.swift in Sources */,
-				CEBDD58329747A6000319722 /* AccountViewModel.swift in Sources */,
+				CEBDD58329747A6000319722 /* AccountModelObservableObject.swift in Sources */,
 				CE4E2564297422ED007D5294 /* ItsJustNumbersApp.swift in Sources */,
 				CEBDD5802974288100319722 /* AccountInfoUIComponent.swift in Sources */,
 				CEBDD57C2974249500319722 /* AccountModel.swift in Sources */,

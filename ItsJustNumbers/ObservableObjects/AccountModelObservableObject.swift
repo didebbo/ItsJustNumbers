@@ -1,5 +1,5 @@
 //
-//  AccountViewModel.swift
+//  AccountModelObservableObject.swift
 //  ItsJustNumbers
 //
 //  Created by MC Engineering on 15/01/23.
