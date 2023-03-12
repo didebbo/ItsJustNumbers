@@ -28,13 +28,6 @@ class AccountViewnModel: ObservableObject {
         String(String(format: "%.6f", model.experience).dropFirst(2))
     }
     
-    func getTransactionValue(id: UUID, withUniform: Bool = true ) -> String {
-        guard let value = model.transactions.first(where: {$0.id == id})?.value else { return "N/A" }
-        var str = String(format: "%.2f", (value))
-        if withUniform { str += "€" }
-        return  str
-    }
-    
     func addCurrency() {
         let addValue = 1 / Double.random(in: 0...100)
         model.transactions.append(
