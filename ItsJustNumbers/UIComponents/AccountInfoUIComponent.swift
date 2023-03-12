@@ -24,7 +24,7 @@ struct MainAccountInfoUIComponent: View {
                     HStack(){
                         Text("Currency:")
                             .font(.system(size: 18, weight: .bold))
-                        Text("\(account.getCurrency())")
+                        Text(getCurrency(account: account))
                     }
                     HStack(){
                         Text("Level:")
@@ -43,6 +43,10 @@ struct MainAccountInfoUIComponent: View {
         }
         .foregroundColor(.white)
         .background(.green)
+    }
+    
+    private func getCurrency(account: AccountModelObservableObject) -> String {
+        String(format: "%.2f", account.model.currency)
     }
 }
 

@@ -20,10 +20,6 @@ class AccountModelObservableObject: ObservableObject {
         transactions: []
     )
     
-    func getCurrency() -> String {
-        String(format: "%.2f", model.currency)
-    }
-    
     func getExperience() -> String {
         String(String(format: "%.6f", model.experience).dropFirst(2))
     }
