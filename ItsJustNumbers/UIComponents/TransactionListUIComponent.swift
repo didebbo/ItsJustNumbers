@@ -16,7 +16,7 @@ struct TransactionListUIComponent: View {
             HStack(alignment: .center) {
                 TransactionDescriptionUIComponent(transaction: .constant(transaction))
                 Spacer()
-                TransactionValueUIComponent(account: .constant(account), transaction: .constant(transaction))
+                TransactionValueUIComponent(transaction: .constant(transaction))
             }
             .frame(maxWidth: .infinity)
             .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
@@ -41,14 +41,19 @@ struct TransactionDescriptionUIComponent: View {
 
 struct TransactionValueUIComponent: View {
     
-    @Binding var account: AccountViewnModel
     @Binding var transaction: TransactionModel
     
     var body: some View {
         HStack(spacing: .zero) {
-            Text(account.getTransactionValue(id: transaction.id))
+            Text(getTransactionValue(transaction: transaction))
                 .fontWeight(transaction.type == .incoming ? .bold : .regular)
         }
+    }
+    
+    private func getTransactionValue(transaction: TransactionModel, withUniform: Bool = true ) -> String {
+        var str = String(format: "%.2f", (transaction.value))
+        if withUniform { str += "€" }
+        return  str
     }
 }
 
