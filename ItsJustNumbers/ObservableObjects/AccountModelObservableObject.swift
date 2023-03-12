@@ -28,6 +28,12 @@ class AccountModelObservableObject: ObservableObject {
         String(String(format: "%.6f", model.experience).dropFirst(2))
     }
     
+    func getTransactionValue(transaction: TransactionModel, withUniform: Bool = true ) -> String {
+        var str = String(format: "%.2f", (transaction.value))
+        if withUniform { str += "€" }
+        return  str
+    }
+    
     func addCurrency() {
         let addValue = 1 / Double.random(in: 0...100)
         model.transactions.append(
