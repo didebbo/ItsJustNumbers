@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainAccountInfoUIComponent: View {
     
-    @Binding var account: AccountViewnModel
+    @Binding var account: AccountModelObservableObject
     
     var body: some View {
         ZStack(){
@@ -50,7 +50,7 @@ struct MainAccountInfo_Previews: PreviewProvider {
     static var previews: some View {
         VStack() {
             MainAccountInfoUIComponent(
-                account: .constant(AccountViewnModel())
+                account: .constant(AccountModelObservableObject())
             )
             Spacer()
         }

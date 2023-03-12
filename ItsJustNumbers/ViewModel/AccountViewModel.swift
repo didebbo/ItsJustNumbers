@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AccountViewnModel: ObservableObject {
+class AccountModelObservableObject: ObservableObject {
     
     @Published private(set) var model: AccountModel = AccountModel(
         id: UUID(),
