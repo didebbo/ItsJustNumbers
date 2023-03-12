@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TransactionListUIComponent: View {
     
-    @Binding var account: AccountModelObservableObject
+    @Binding var account: AccountViewModel
     
     var body: some View {
         List(account.model.transactions.reversed(), id: \.id) { transaction in
@@ -41,7 +41,7 @@ struct TransactionDescriptionUIComponent: View {
 
 struct TransactionValueUIComponent: View {
     
-    @Binding var account: AccountModelObservableObject
+    @Binding var account: AccountViewModel
     @Binding var transaction: TransactionModel
     
     var body: some View {
@@ -52,8 +52,8 @@ struct TransactionValueUIComponent: View {
     }
 }
 
-struct aaa_Previews: PreviewProvider {
+struct TransactionList_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionListUIComponent(account: .constant(AccountModelObservableObject()))
+        TransactionListUIComponent(account: .constant(AccountViewModel()))
     }
 }

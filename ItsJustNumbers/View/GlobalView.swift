@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GlobalView: View {
     
-    @StateObject var account = AccountModelObservableObject()
+    @StateObject var account = AccountViewModel()
     
     var body: some View {
         VStack() {
@@ -23,7 +23,7 @@ struct GlobalView: View {
 
 struct DebugTools: View {
     
-    @Binding var account: AccountModelObservableObject
+    @Binding var account: AccountViewModel
     
     var body: some View {
         HStack(alignment: .center, spacing: 10) {

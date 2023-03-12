@@ -1,5 +1,5 @@
 //
-//  AccountModelObservableObject.swift
+//  AccountViewModel.swift
 //  ItsJustNumbers
 //
 //  Created by MC Engineering on 15/01/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AccountModelObservableObject: ObservableObject {
+class AccountViewModel: ObservableObject {
     
     @Published private(set) var model: AccountModel = AccountModel(
         id: UUID(),
