@@ -24,6 +24,10 @@ class AccountModelObservableObject: ObservableObject {
         String(format: "%.2f", model.currency)
     }
     
+    func getExperience() -> String {
+        String(String(format: "%.6f", model.experience).dropFirst(2))
+    }
+    
     func addCurrency() {
         let addValue = 1 / Double.random(in: 0...100)
         model.transactions.append(

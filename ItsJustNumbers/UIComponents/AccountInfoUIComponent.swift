@@ -34,7 +34,7 @@ struct MainAccountInfoUIComponent: View {
                     HStack(){
                         Text("Experience:")
                             .font(.system(size: 18, weight: .bold))
-                        Text(getExperience(account: account))
+                        Text(account.getExperience())
                     }
                 }
                 .padding()
@@ -43,10 +43,6 @@ struct MainAccountInfoUIComponent: View {
         }
         .foregroundColor(.white)
         .background(.green)
-    }
-    
-    func getExperience(account: AccountModelObservableObject) -> String {
-        String(String(format: "%.6f", account.model.experience).dropFirst(2))
     }
 }
 
